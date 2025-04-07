@@ -1,3 +1,57 @@
+import { useState } from 'react';
+
+export default function UpdateListing() {
+  const [formData, setFormData] = useState({
+    name: '',
+    description: '',
+    address: '',
+    type: 'sale',
+    parking: false,
+    furnished: false,
+    offer: false,
+    bedrooms: 1,
+    bathrooms: 1,
+    regularPrice: 0,
+    discountPrice: 0,
+    imageUrls: [],
+  });
+
+  const [files, setFiles] = useState([]);
+  const [uploading, setUploading] = useState(false);
+  const [imageUploadError, setImageUploadError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleChange = (e) => {
+    const { id, type, value, checked } = e.target;
+    if (type === 'checkbox') {
+      setFormData((prev) => ({ ...prev, [id]: checked }));
+    } else {
+      setFormData((prev) => ({ ...prev, [id]: value }));
+    }
+  };
+
+  const handleImageSubmit = async () => {
+    // your upload logic here
+  };
+
+  const handleRemoveImage = (index) => {
+    setFormData((prev) => ({
+      ...prev,
+      imageUrls: prev.imageUrls.filter((_, i) => i !== index),
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    // your submit logic here
+    setLoading(false);
+  };
+
+
+return(
+
 <main className="p-4 max-w-5xl mx-auto">
   <h1 className="text-3xl font-bold text-center my-8">Update a Listing</h1>
   <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-8">
@@ -203,3 +257,5 @@
     </div>
   </form>
 </main>
+);
+}

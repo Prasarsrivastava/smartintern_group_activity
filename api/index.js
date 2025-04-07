@@ -1,15 +1,13 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-dotenv.config();
 
-mongoose
-  .connect(process.env.MONGO)
+mongoose.connect('mongodb+srv://prasar:prasar123@cluster0.vg0jdas.mongodb.net/mern-estate?retryWrites=true&w=majority')
+
   .then(() => {
     console.log('Connected to MongoDB!');
   })

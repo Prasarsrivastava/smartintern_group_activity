@@ -30,7 +30,7 @@ export default function Header() {
         {/* Logo */}
         <Link to="/">
           <h1 className="font-bold text-lg sm:text-2xl tracking-tight">
-            <span className="text-blue-500">Sahand</span>
+            <span className="text-blue-500">Prasar</span>
             <span className="text-slate-800">Estate</span>
           </h1>
         </Link>

@@ -56,7 +56,7 @@ export default function Home() {
           Discover Your <span className='text-blue-700'>Perfect</span> Space
         </h1>
         <p className='text-gray-600 text-sm sm:text-base max-w-2xl'>
-          Welcome to Sahand Estate — your go-to platform for finding the perfect
+          Welcome to Prsar Group of Estate — your go-to platform for finding the perfect
           place to live. Browse our curated collection of properties for sale and rent.
         </p>
         <Link
